@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/hi")
 public class Khm extends HttpServlet {
 	@Override
-	protected void service(HttpServletRequest requset, HttpServletResponse response)
+	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		// 데이터를 UTF-8로 보낸다.
@@ -24,7 +24,7 @@ public class Khm extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 
-		String cnt_ = requset.getParameter("cnt");
+		String cnt_ = request.getParameter("cnt");
 		int cnt = 10;
 		if (cnt_ != null && !cnt_.equals(""))
 			cnt = Integer.parseInt(cnt_);
