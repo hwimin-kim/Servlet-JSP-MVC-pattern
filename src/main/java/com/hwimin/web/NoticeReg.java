@@ -13,17 +13,17 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/notice-reg")
 public class NoticeReg extends HttpServlet {
 	@Override
-	protected void service(HttpServletRequest requset, HttpServletResponse response)
+	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		response.setCharacterEncoding("UTF-8");
-		requset.setCharacterEncoding("UTF-8");
+		//request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 
 		PrintWriter out = response.getWriter();
 
-		String title = requset.getParameter("title");
-		String content = requset.getParameter("content");
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
 		
 		out.print(title);
 		out.print(content);
