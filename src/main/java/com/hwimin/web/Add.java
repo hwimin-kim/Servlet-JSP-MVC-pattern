@@ -24,22 +24,19 @@ public class Add extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 
-		String first = request.getParameter("first");
-		String second = request.getParameter("second");
+		String first_ = request.getParameter("first");
+		String second_ = request.getParameter("second");
 		
-		 int first_ = 0;
-		 int second_ = 0;
-		 int result = 0;
-
-		if(first != null && !first.equals("")) {
-			if(second != null && !second.equals("")) {
-				first_ = Integer.parseInt(first);
-				second_ = Integer.parseInt(second);
-				result = first_ + second_;
-			}
-		}
-		out.print("계산결과: "+first_+"입니다!!");
-		out.print("계산결과: "+second_+"입니다!!");
+		 int first = 0;
+		 int second = 0;
+		 
+		if(!first_.equals("")) first = Integer.parseInt(first_);			
+		if(!second_.equals("")) second = Integer.parseInt(second_);
+		int result = 0;
+		
+		result = first + second;
+		
+		
 		out.print("계산결과: "+result+"입니다!!");
 		
 	}
